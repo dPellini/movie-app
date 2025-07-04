@@ -1,0 +1,15 @@
+{
+  "app-title": "The Movie App",
+  "not-found": {
+    "title": "Page Not Found",
+    "message": "Could not find requested resource",
+    "back-home": "Back to Home Page",
+    "back-login": "Back to Login"
+  },
+  "nav-bar-items": {
+    "movie": "Movies",
+    "tvs": "TVs",
+    "people": "People",
+    "more": "More"
+  }
+}

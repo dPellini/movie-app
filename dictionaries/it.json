@@ -1,0 +1,15 @@
+{
+  "app-title": "The Movie App",
+  "not-found": {
+    "title": "Pagina non trovata",
+    "message": "Non è stato possibile recuperare la risorsa cercata",
+    "back-home": "Torna alla Home",
+    "back-login": "Torna al Login"
+  },
+  "nav-bar-items" :{
+    "movie": "Film",
+    "tvs": "Serie TV",
+    "people": "Persone",
+    "more": "Altro"
+  }
+}
