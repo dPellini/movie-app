@@ -6,10 +6,28 @@
     "back-home": "Back to Home Page",
     "back-login": "Back to Login"
   },
-  "nav-bar-items": {
-    "movie": "Movies",
-    "tvs": "TVs",
-    "people": "People",
-    "more": "More"
+
+  "navbar-items": {
+    "movie": {
+      "title": "Movies",
+      "popular": "Popular",
+      "now-playing": "Now Playing",
+      "upcoming": "Upcoming",
+      "top-rated": "Top Rated"
+    },
+    "tvs": {
+      "title": "TVs",
+      "popular": "Popular",
+      "airing-today": "Airing Today",
+      "on-tv": "On TV",
+      "top-rated": "Top Rated"
+    },
+    "people": { "title": "People", "popular-people": "Popular People" },
+    "more": {
+      "title": "More",
+      "discussion": "Discussion",
+      "leaderboard": "Leaderboard",
+      "support": "Support"
+    }
   }
 }

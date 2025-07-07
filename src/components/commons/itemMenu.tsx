@@ -1,40 +1,55 @@
 "use client";
 
+import { sectionList } from "@/lib/constants/lists";
 import { Section } from "@/lib/types/section.type";
-import { getRoundedBorder } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import DropdownMenu from "./dopdownMenu";
+import DropdownItem from "./dropdownItem";
 
-export default function ItemMenu({ section }: { section: Section }) {
-  const t = useTranslations("nav-bar-items");
-  const [open, setOpen] = useState(false);
+interface ItemMenuProps {
+  section: Section;
+  isOpen: boolean;
+  setIsOpen: (key: any) => void;
+}
+
+export default function ItemMenu({
+  section,
+  isOpen,
+  setIsOpen,
+}: ItemMenuProps) {
+  const t = useTranslations("navbar-items");
 
   return (
-    <div className="relative inline-block z-50">
+    <div
+      onMouseEnter={() => setIsOpen(section.name)}
+      onMouseLeave={() => setIsOpen(section.name)}
+      className={`relative inline-block cursor-pointer h-full mt-8`}
+    >
       <span
-        onClick={() => setOpen((prev) => !prev)}
-        className="text-white hover:text-red-800 cursor-pointer"
+        className={`text-lg font-semibold hover:text-red-800 cursor-pointer ${
+          isOpen ? "text-red-800" : "text-white"
+        }`}
       >
-        {t(section.name)}
+        {t(`${section.name}.title`)}
       </span>
 
-      {open && (
-        <div className="absolute mt-2 w-40 rounded-md shadow-lg bg-slate-400 ring-1 ring-red-600 ring-opacity-5 z-50">
-          <ul className="min-h-8">
-            {section.subsections.map((subsection, index) => (
-              <li
-                key={index}
-                onClick={() => console.log("subsection path:", subsection.path)}
-                className={`flex items-center space-x-2 px-4 py-2 hover:bg-red-600 hover:text-white cursor-pointer ${getRoundedBorder(
-                  index,
-                  section.subsections
-                )}`}
-              >
-                <span>{subsection.name}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div
+        className={`h-0.5 rounded-3xl transition-all duration-400 ease-linear ${
+          isOpen ? "bg-red-800 w-full" : "w-0"
+        }`}
+      />
+
+      {isOpen && (
+        <DropdownMenu>
+          {section.subsections.map((subsection, index) => (
+            <DropdownItem
+              key={index}
+              index={index}
+              list={section.subsections}
+              name={t(`${section.name}.${subsection.name}`)}
+            />
+          ))}
+        </DropdownMenu>
       )}
     </div>
   );

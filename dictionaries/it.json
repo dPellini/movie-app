@@ -6,10 +6,28 @@
     "back-home": "Torna alla Home",
     "back-login": "Torna al Login"
   },
-  "nav-bar-items" :{
-    "movie": "Film",
-    "tvs": "Serie TV",
-    "people": "Persone",
-    "more": "Altro"
+
+  "navbar-items": {
+    "movie": {
+      "title": "Film",
+      "popular": "Popolari",
+      "now-playing": "Adesso in Onda",
+      "upcoming": "In Arrivo",
+      "top-rated": "Più Votati"
+    },
+    "tvs": {
+      "title": "Serie TV",
+      "popular": "Popolari",
+      "airing-today": "In Onda Oggi",
+      "on-tv": "In TV",
+      "top-rated": "Più Votati"
+    },
+    "people": { "title": "Persone", "popular-people": "Persone Popolari" },
+    "more": {
+      "title": "Altro",
+      "discussion": "Discussioni",
+      "leaderboard": "Classifica",
+      "support": "Supporto"
+    }
   }
 }
