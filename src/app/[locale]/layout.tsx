@@ -1,6 +1,6 @@
 import Footer from "@/components/commons/footer";
-import Navbar from "@/components/commons/navbar";
-import Searchbar from "@/components/commons/searchbar";
+import Navbar from "@/components/navbar/navbar";
+import Searchbar from "@/components/navbar/searchbar";
 import { routing } from "@/i18n/routing";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
@@ -27,7 +27,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider>
       <Navbar />
       {/* {showSearchBar && <Searchbar />} */}
-      <main className="grow h-full w-full items-center sm:items-start bg-slate-600 overflow-hidden border border-red-500">
+      <main className="grow h-full w-full items-center sm:items-start bg-slate-600 overflow-hidden">
         {children}
       </main>
       <Footer />

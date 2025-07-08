@@ -4,8 +4,8 @@ import { translationList } from "@/lib/constants/lists";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import DropdownMenu from "./dopdownMenu";
-import DropdownItem from "./dropdownItem";
+import DropdownMenu from "../commons/dopdownMenu";
+import DropdownItem from "../commons/dropdownItem";
 
 export default function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
@@ -22,7 +22,7 @@ export default function LanguageSwitcher() {
   const currentLang = translationList.find((lang) => lang.locale === locale);
 
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block mx-auto">
       <button
         onClick={() => setOpen((prev) => !prev)}
         className="flex items-center space-x-2 text-white rounded-4xl p-1 shadow-sm shadow-slate-200 cursor-pointer"

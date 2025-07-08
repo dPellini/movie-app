@@ -3,8 +3,8 @@
 import { sectionList } from "@/lib/constants/lists";
 import { Section } from "@/lib/types/section.type";
 import { useTranslations } from "next-intl";
-import DropdownMenu from "./dopdownMenu";
-import DropdownItem from "./dropdownItem";
+import DropdownMenu from "../commons/dopdownMenu";
+import DropdownItem from "../commons/dropdownItem";
 
 interface ItemMenuProps {
   section: Section;
