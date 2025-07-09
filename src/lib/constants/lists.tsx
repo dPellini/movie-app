@@ -1,4 +1,7 @@
 import { Section } from "../types/section.type";
+import { FaStar } from "react-icons/fa";
+import { IoMdSettings } from "react-icons/io";
+import { FaList } from "react-icons/fa6";
 
 export const translationList = [
   {
@@ -81,7 +84,13 @@ export const sectionList: Section[] = [
       {
         name: "support",
         path: "/more/support",
-      }
+      },
     ],
   },
+];
+
+export const accountMenuList = [
+  { name: "favourites", path: "/profile/favourites", icon: <FaStar /> },
+  { name: "watchlist", path: "/profile/watchlist", icon: <FaList /> },
+  { name: "settings", path: "/profile/settings", icon: <IoMdSettings /> },
 ];

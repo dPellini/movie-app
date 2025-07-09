@@ -1,10 +1,13 @@
 import { getRoundedBorder } from "@/lib/utils";
+import { JSX } from "react";
+import { IconType } from "react-icons";
 
 interface DropdownItemProps {
   name: string;
   index: number;
   list: any;
   img?: string;
+  icon?: JSX.Element;
   onClick?: () => void;
 }
 
@@ -13,6 +16,7 @@ const DropdownItem = ({
   index,
   list,
   img,
+  icon,
   onClick,
 }: DropdownItemProps) => {
   return (
@@ -30,6 +34,7 @@ const DropdownItem = ({
           className="w-5 h-5 rounded-lg shadow-sm shadow-slate-200"
         />
       )}
+      {icon && icon}
       <span>{name}</span>
     </li>
   );

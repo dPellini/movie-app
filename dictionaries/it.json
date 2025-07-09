@@ -6,7 +6,6 @@
     "back-home": "Torna alla Home",
     "back-login": "Torna al Login"
   },
-
   "navbar-items": {
     "movie": {
       "title": "Film",
@@ -29,5 +28,10 @@
       "leaderboard": "Classifica",
       "support": "Supporto"
     }
+  },
+  "account-menu": {
+    "favourites": "Preferiti",
+    "watchlist": "Watchlist",
+    "settings": "Impostazioni"
   }
 }

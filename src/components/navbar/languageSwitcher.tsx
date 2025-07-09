@@ -8,7 +8,7 @@ import DropdownMenu from "../commons/dopdownMenu";
 import DropdownItem from "../commons/dropdownItem";
 
 export default function LanguageSwitcher() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
   const switchTo = (lang: string) => {
     const newPath = pathname.replace(`/${locale}`, `/${lang}`);
     router.push(newPath);
-    setOpen(false);
+    setIsOpen(false);
   };
 
   const currentLang = translationList.find((lang) => lang.locale === locale);
@@ -24,8 +24,8 @@ export default function LanguageSwitcher() {
   return (
     <div className="relative inline-block mx-auto">
       <button
-        onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center space-x-2 text-white rounded-4xl p-1 shadow-sm shadow-slate-200 cursor-pointer"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className={`flex items-center space-x-2 text-white cursor-pointer hover:scale-120 ${isOpen && "scale-120"}`}
       >
         <img
           src={`/assets/${currentLang?.locale}.png`}
@@ -34,7 +34,7 @@ export default function LanguageSwitcher() {
         />
       </button>
 
-      {open && (
+      {isOpen && (
         <DropdownMenu isRight={true}>
           {translationList.map((lang, index) => (
             <DropdownItem

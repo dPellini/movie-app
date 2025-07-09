@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import { getLocale } from "next-intl/server";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NextIntlClientProvider } from "next-intl";
-import Navbar from "@/components/navbar/navbar";
-import Footer from "@/components/commons/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,10 +22,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const locale = await getLocale();
 
   return (
-    <html lang={locale}>
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen bg-slate-600 overflow-y-auto`}
       >

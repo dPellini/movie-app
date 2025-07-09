@@ -29,5 +29,10 @@
       "leaderboard": "Leaderboard",
       "support": "Support"
     }
+  },
+  "account-menu": {
+    "favourites": "Favourites",
+    "watchlist": "Watchlist",
+    "settings": "Settings"
   }
 }
